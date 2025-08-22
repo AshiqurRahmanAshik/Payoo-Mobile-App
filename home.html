@@ -4,8 +4,130 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- daisy ui cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-    <p>Hi from Home</p>
+  <body class="max-w-lg mx-auto p-1">
+    <nav class="flex items-center justify-between">
+      <div class="nav-left flex items-end justify-center">
+        <img src="./assets/Group.png" alt="nav-logo" class="w-20" />
+        <div>
+          <p class="font-semibold">
+            <span>$</span><span id="total-amount">45000</span>
+          </p>
+          <p>Available Balance</p>
+        </div>
+      </div>
+      <div class="nav-right">
+        <button class="p-2 rounded-md btn">
+          <i class="fa-solid fa-arrow-right-from-bracket rotate-180 mr-2"></i
+          >Log Out
+        </button>
+      </div>
+    </nav>
+    <section class="mt-2 md:mt-3 lg:mt-5">
+      <h2 class="font-semibold">🔥 Welcome to Payooo!</h2>
+      <p class="mt-1 md:mt-3 lg:mt-3">
+        Enjoy easy and convenient financial services with us. Cashout charge is
+        low and
+      </p>
+    </section>
+    <section
+      class="mt-3 md:mt-4 lg:mt-5 grid grid-cols-1 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 gap-2 px-2"
+    >
+      <div
+        class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
+      >
+        <img class="w-8" src="./assets/purse1.png" alt="money" />
+        <p>Add Money</p>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
+      >
+        <img class="w-8" src="./assets/send1.png" alt="money" />
+        <p>Cash Out</p>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
+      >
+        <img class="w-8" src="./assets/money1.png" alt="money" />
+        <p>Transfer Money</p>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
+      >
+        <img class="w-8" src="./assets/bonus1.png" alt="money" />
+        <p>Add Money</p>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
+      >
+        <img class="w-8" src="./assets/wallet1.png" alt="money" />
+        <p>Add Money</p>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
+      >
+        <img class="w-8" src="./assets/transaction1.png" alt="money" />
+        <p>Add Money</p>
+      </div>
+    </section>
+    <section class="mt-3 md:mt-5">
+      <h3 class="font-bold">Add Money</h3>
+      <form class="form">
+        <legend class="my-1 font-semibold">Select a Bank</legend>
+        <fieldset class="fieldset">
+          <select class="select w-full rounded-md bg-gray-100">
+            <option disabled selected>Select Bank</option>
+            <option>AB Bank</option>
+            <option>Datch Bangla Bank</option>
+            <option>IFIC Bank</option>
+          </select>
+        </fieldset>
+        <legend class="my-1 font-semibold">Bank Account Number</legend>
+        <input
+          type="text"
+          placeholder="Bank Account Number"
+          class="input input-primary w-full border-none rounded-xl bg-gray-100"
+        />
+        <legend class="my-1 font-semibold">Amount to Add</legend>
+        <input
+          id="amount-to-add"
+          type="text"
+          placeholder="Amount to Add"
+          class="input input-primary w-full border-none rounded-xl bg-gray-100"
+          value="1000"
+        />
+        <legend class="my-1 font-semibold">Pin Number</legend>
+        <input
+          type="text"
+          placeholder="Enter 4 digit pin"
+          class="input input-primary w-full border-none rounded-xl bg-gray-100"
+        />
+        <div class="text-center mt-2">
+          <button
+            id="add-money-btn"
+            class="btn btn-primary bg-blue-600 border-none mt-2 w-full px-2"
+          >
+            Add Money
+          </button>
+        </div>
+      </form>
+    </section>
+    <script src="./home.js"></script>
   </body>
 </html>

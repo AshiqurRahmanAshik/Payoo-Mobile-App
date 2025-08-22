@@ -7,8 +7,12 @@ loginButton.addEventListener("click", function (e) {
   const pinNumber = document.getElementById("pin-number");
   const valueOfPin = pinNumber.value;
   if (lengthOfMobileNumber == 11 && valueOfPin == 1234) {
-    console.log("Correct");
+    window.location.href = "./home.html";
   } else {
-    console.log("Wrong");
+    if (lengthOfMobileNumber != 11) {
+      alert("Invalid Mobile Number");
+    } else {
+      alert("Invalid Pin Number");
+    }
   }
 });

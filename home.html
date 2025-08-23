@@ -53,49 +53,52 @@
     >
       <div
         id="dashboard-add-money"
-        class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
+        class="dashboard-btn flex flex-col items-center justify-center border-2 border-gray-300 rounded-md py-5"
       >
         <img class="w-8" src="./assets/purse1.png" alt="money" />
         <p>Add Money</p>
       </div>
       <div
         id="dashboard-cash-out"
-        class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
+        class="dashboard-btn flex flex-col items-center justify-center border-2 border-gray-300 rounded-md py-5"
       >
         <img class="w-8" src="./assets/send1.png" alt="money" />
         <p>Cash Out</p>
       </div>
       <div
         id="dashboard-transfer"
-        class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
+        class="dashboard-btn flex flex-col items-center justify-center border-2 border-gray-300 rounded-md py-5"
       >
         <img class="w-8" src="./assets/money1.png" alt="money" />
         <p>Transfer Money</p>
       </div>
       <div
         id="dashboard-bonus"
-        class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
+        class="dashboard-btn flex flex-col items-center justify-center border-2 border-gray-300 rounded-md py-5"
       >
         <img class="w-8" src="./assets/bonus1.png" alt="money" />
         <p>Get Bonus</p>
       </div>
       <div
         id="dashboard-pay-bill"
-        class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
+        class="dashboard-btn flex flex-col items-center justify-center border-2 border-gray-300 rounded-md py-5"
       >
         <img class="w-8" src="./assets/wallet1.png" alt="money" />
         <p>Pay Bill</p>
       </div>
       <div
         id="dashboard-transactions"
-        class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
+        class="dashboard-btn flex flex-col items-center justify-center border-2 border-gray-300 rounded-md py-5"
       >
         <img class="w-8" src="./assets/transaction1.png" alt="money" />
         <p>Transactions</p>
       </div>
     </section>
 
-    <section id="add-money-form" class="transaction-section mt-3 md:mt-5">
+    <section
+      id="add-money-form"
+      class="transaction-section mt-3 md:mt-5 hidden"
+    >
       <h3 class="font-bold">Add Money</h3>
       <form class="form">
         <legend class="my-1 font-semibold">Select a Bank</legend>
@@ -142,7 +145,7 @@
       </form>
     </section>
 
-    <section id="cash-out-form" class="transaction-section mt-3 md:mt-5">
+    <section id="cash-out-form" class="transaction-section mt-3 md:mt-5 hidden">
       <h3 class="font-bold">Cash Out</h3>
       <form class="form">
         <legend class="my-1 font-semibold">Agent Number</legend>
@@ -179,7 +182,10 @@
       </form>
     </section>
 
-    <section id="transfer-money-form" class="transaction-section mt-3 md:mt-5">
+    <section
+      id="transfer-money-form"
+      class="transaction-section mt-3 md:mt-5 hidden"
+    >
       <h3 class="font-bold">Transfer Money</h3>
       <form class="form">
         <legend class="my-1 font-semibold">User Account Number</legend>
@@ -214,7 +220,7 @@
       </form>
     </section>
 
-    <section id="bonus-money" class="transaction-section mt-3 md:mt-5">
+    <section id="bonus-money" class="transaction-section mt-3 md:mt-5 hidden">
       <h3 class="font-bold">Get Bonus</h3>
       <form class="form">
         <legend class="my-1 font-semibold">Enter Bonus Coupon</legend>
@@ -235,7 +241,7 @@
       </form>
     </section>
 
-    <section id="pay-bill-form" class="transaction-section mt-3 md:mt-5">
+    <section id="pay-bill-form" class="transaction-section mt-3 md:mt-5 hidden">
       <h3 class="font-bold">Pay Bill</h3>
       <form class="form">
         <legend class="my-1 font-semibold">Biller Account Number</legend>
@@ -271,7 +277,10 @@
         </div>
       </form>
     </section>
-    <section id="transactions-form" class="transaction-section mt-3 md:mt-5">
+    <section
+      id="transactions-form"
+      class="transaction-section mt-3 md:mt-5 hidden"
+    >
       <h3 class="font-bold">Transactions</h3>
     </section>
 

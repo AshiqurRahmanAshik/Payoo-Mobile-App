@@ -1,10 +1,18 @@
 function dashboard(id1, id2) {
   const addMoneyDashboard = document.getElementById(id1);
   addMoneyDashboard.addEventListener("click", function () {
+    const dashboardButtons = document.getElementsByClassName("dashboard-btn");
+    for (const dashboardButton of dashboardButtons) {
+      dashboardButton.classList.add("border-1", "border-gray-300");
+      dashboardButton.classList.remove("bg-[#0874f20d]");
+    }
+    document
+      .getElementById(id1)
+      .classList.add("bg-[#0874f20d]", "border-gray-300");
     const transactions = document.getElementsByClassName("transaction-section");
     for (const transaction of transactions) {
-      transaction.style.display = "none";
-      document.getElementById(id2).style.display = "block";
+      transaction.classList.add("hidden");
+      document.getElementById(id2).classList.remove("hidden");
     }
   });
 }

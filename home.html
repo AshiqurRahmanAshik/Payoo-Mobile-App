@@ -50,43 +50,49 @@
       class="mt-3 md:mt-4 lg:mt-5 grid grid-cols-1 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 gap-2 px-2"
     >
       <div
+        id="addMoney"
         class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
       >
         <img class="w-8" src="./assets/purse1.png" alt="money" />
         <p>Add Money</p>
       </div>
       <div
+        id="cashOut"
         class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
       >
         <img class="w-8" src="./assets/send1.png" alt="money" />
         <p>Cash Out</p>
       </div>
       <div
+        id="transferMoney"
         class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
       >
         <img class="w-8" src="./assets/money1.png" alt="money" />
         <p>Transfer Money</p>
       </div>
       <div
+        id="getBonus"
         class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
       >
         <img class="w-8" src="./assets/bonus1.png" alt="money" />
-        <p>Add Money</p>
+        <p>Get Bonus</p>
       </div>
       <div
+        id="payBill"
         class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
       >
         <img class="w-8" src="./assets/wallet1.png" alt="money" />
-        <p>Add Money</p>
+        <p>Pay Bill</p>
       </div>
       <div
+        id="transactions"
         class="flex flex-col items-center justify-center bg-gray-200 rounded-md py-5"
       >
         <img class="w-8" src="./assets/transaction1.png" alt="money" />
-        <p>Add Money</p>
+        <p>Transactions</p>
       </div>
     </section>
-    <section class="mt-3 md:mt-5">
+    <section id="add-money" class="mt-3 md:mt-5">
       <h3 class="font-bold">Add Money</h3>
       <form class="form">
         <legend class="my-1 font-semibold">Select a Bank</legend>
@@ -129,6 +135,99 @@
         </div>
       </form>
     </section>
+    <section id="cash-out" class="mt-3 md:mt-5">
+      <h3 class="font-bold">Cash Out</h3>
+      <form class="form">
+        <legend class="my-1 font-semibold">Agent Number</legend>
+        <input
+          id="agent-mobile-number"
+          value="01719466242"
+          type="text"
+          placeholder="Enter 11 Digit Number"
+          class="input input-primary w-full border-none rounded-xl bg-gray-100"
+        />
+
+        <legend class="my-1 font-semibold">Amount</legend>
+        <input
+          id="amount-to-withdraw"
+          type="text"
+          placeholder="Amount to Cash Out"
+          class="input input-primary w-full border-none rounded-xl bg-gray-100"
+        />
+        <legend class="my-1 font-semibold">Pin Number</legend>
+        <input
+          id="agent-pin-number"
+          value="1234"
+          type="text"
+          placeholder="Enter 4 digit pin"
+          class="input input-primary w-full border-none rounded-xl bg-gray-100"
+        />
+        <div class="text-center mt-2">
+          <button
+            id="withdrawBtn"
+            class="btn btn-primary bg-blue-600 border-none mt-2 w-full px-2"
+          >
+            Withdraw Money
+          </button>
+        </div>
+      </form>
+    </section>
+    <section id="transfer-money" class="mt-3 md:mt-5">
+      <h3 class="font-bold">Transfer Money</h3>
+      <form class="form">
+        <legend class="my-1 font-semibold">User Account Number</legend>
+        <input
+          id="mobile-number"
+          type="text"
+          placeholder="Enter 11 Digit Number"
+          class="input input-primary w-full border-none rounded-xl bg-gray-100"
+        />
+
+        <legend class="my-1 font-semibold">Amount</legend>
+        <input
+          id="amount-to-add"
+          type="text"
+          placeholder="Amount to Transfer"
+          class="input input-primary w-full border-none rounded-xl bg-gray-100"
+        />
+        <legend class="my-1 font-semibold">Pin Number</legend>
+        <input
+          id="pin-number"
+          type="text"
+          placeholder="Enter 4 digit pin"
+          class="input input-primary w-full border-none rounded-xl bg-gray-100"
+        />
+        <div class="text-center mt-2">
+          <button
+            id="add-money-btn"
+            class="btn btn-primary bg-blue-600 border-none mt-2 w-full px-2"
+          >
+            Send Now
+          </button>
+        </div>
+      </form>
+    </section>
+    <section id="bonus-money" class="mt-3 md:mt-5">
+      <h3 class="font-bold">Get Bonus</h3>
+      <form class="form">
+        <legend class="my-1 font-semibold">Enter Bonus Coupon</legend>
+        <input
+          id="mobile-number"
+          type="text"
+          placeholder="Enter Bonus Coupon"
+          class="input input-primary w-full border-none rounded-xl bg-gray-100"
+        />
+        <div class="text-center mt-2">
+          <button
+            id="add-money-btn"
+            class="btn btn-primary bg-blue-600 border-none mt-2 w-full px-2"
+          >
+            Get Bonus
+          </button>
+        </div>
+      </form>
+    </section>
     <script src="./home.js"></script>
+    <script src="./cashout.js"></script>
   </body>
 </html>

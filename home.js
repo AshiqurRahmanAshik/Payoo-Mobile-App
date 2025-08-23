@@ -21,3 +21,36 @@ addMoneyBtn.addEventListener("click", function (e) {
     totalAmountElement.innerText = remainAmount;
   }
 });
+document.getElementById("add-money").style.display = "none";
+document.getElementById("cash-out").style.display = "none";
+document.getElementById("transfer-money").style.display = "none";
+document.getElementById("bonus-money").style.display = "none";
+
+const addMoney = document.getElementById("addMoney");
+addMoney.addEventListener("click", function () {
+  document.getElementById("add-money").style.display = "block";
+  document.getElementById("cash-out").style.display = "none";
+  document.getElementById("transfer-money").style.display = "none";
+  document.getElementById("bonus-money").style.display = "none";
+});
+const cashOut = document.getElementById("cashOut");
+cashOut.addEventListener("click", function () {
+  document.getElementById("add-money").style.display = "none";
+  document.getElementById("cash-out").style.display = "block";
+  document.getElementById("transfer-money").style.display = "none";
+  document.getElementById("bonus-money").style.display = "none";
+});
+const transferMoney = document.getElementById("transferMoney");
+transferMoney.addEventListener("click", function () {
+  document.getElementById("add-money").style.display = "none";
+  document.getElementById("cash-out").style.display = "none";
+  document.getElementById("transfer-money").style.display = "block";
+  document.getElementById("bonus-money").style.display = "none";
+});
+const getBonus = document.getElementById("getBonus");
+getBonus.addEventListener("click", function () {
+  document.getElementById("add-money").style.display = "none";
+  document.getElementById("cash-out").style.display = "none";
+  document.getElementById("transfer-money").style.display = "none";
+  document.getElementById("bonus-money").style.display = "block";
+});

@@ -64,6 +64,7 @@ function addMoneyButton(id) {
     document.getElementById("total-amount").innerText = netBalance;
     const data = {
       name: "Add Money",
+      amount: addMoney,
       date: new Date().toLocaleTimeString(),
     };
     transactionData.push(data);
@@ -96,6 +97,7 @@ function cashOutButton(id) {
     document.getElementById("total-amount").innerText = netBalance;
     const data = {
       name: "Cash Out",
+      amount: cashOutMoney,
       date: new Date().toLocaleTimeString(),
     };
     transactionData.push(data);
@@ -103,7 +105,72 @@ function cashOutButton(id) {
   });
 }
 cashOutButton("cash-out-submit");
-
+// Transfer Money
+function TransferMoneyButton(id) {
+  const button = document.getElementById(id);
+  button.addEventListener("click", function (e) {
+    e.preventDefault();
+    const transferMoneyAccNumber = getValueNumber("transfer-account");
+    const transferMoneyPin = getValueNumber("transfer-pin");
+    if (transferMoneyAccNumber != 123456789 || transferMoneyPin != 1234) {
+      alert("Invalid Credentials");
+      return;
+    }
+    let availableBalance = getInnerTextNumber("total-amount");
+    const transferMoney = getValueNumber("transfer-amount");
+    console.log(transferMoney);
+    if (transferMoney <= 0) {
+      alert("Invalid Credentials");
+      return;
+    }
+    const netBalance = availableBalance - transferMoney;
+    if (netBalance < 0) {
+      alert("Invalid Credentials");
+      return;
+    }
+    document.getElementById("total-amount").innerText = netBalance;
+    const data = {
+      name: "Transfer Money",
+      date: new Date().toLocaleTimeString(),
+      amount: transferMoney,
+    };
+    transactionData.push(data);
+    console.log(data);
+  });
+}
+TransferMoneyButton("transfer-submit");
+// Pay Bill
+function payBillButton(id) {
+  const button = document.getElementById(id);
+  button.addEventListener("click", function (e) {
+    e.preventDefault();
+    const payBillAccNumber = getValueNumber("pay-bill-account");
+    const payBillMoneyPin = getValueNumber("pay-bill-pin");
+    if (payBillAccNumber != 123456789 || payBillMoneyPin != 1234) {
+      alert("Invalid Credentials");
+      return;
+    }
+    let availableBalance = getInnerTextNumber("total-amount");
+    const payBill = getValueNumber("pay-bill-amount");
+    if (payBill <= 0) {
+      alert("Invalid Credentials");
+      return;
+    }
+    const netBalance = availableBalance - payBill;
+    if (netBalance < 0) {
+      alert("Invalid Credentials");
+      return;
+    }
+    document.getElementById("total-amount").innerText = netBalance;
+    const data = {
+      name: "Pay Bill",
+      date: new Date().toLocaleTimeString(),
+      amount: payBill,
+    };
+    transactionData.push(data);
+  });
+}
+payBillButton("pay-bill-submit");
 // Transaction Details
 document
   .getElementById("dashboard-transactions")
@@ -120,7 +187,9 @@ document
                   </div>
                   <div class="ml-3">
                     <h1>${data.name}</h1>
+                    <p>${data.amount} Tk</p>
                     <p>${data.date}</p>
+                    
                   </div>
               </div>
       

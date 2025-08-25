@@ -1,3 +1,5 @@
+// Transaction Data
+const transactionData = [];
 // Function to toggle feature
 function dashboard(id1, id2) {
   const addMoneyDashboard = document.getElementById(id1);
@@ -17,9 +19,18 @@ function dashboard(id1, id2) {
     }
   });
 }
+// Add Money
 dashboard("dashboard-add-money", "add-money-form");
+// Cash Out
 dashboard("dashboard-cash-out", "cash-out-form");
-
+// Transfer Money
+dashboard("dashboard-transfer", "transfer-money-form");
+// Bonus Money
+dashboard("dashboard-bonus", "bonus-money");
+// Pay Bill
+dashboard("dashboard-pay-bill", "pay-bill-form");
+//  Transactions
+dashboard("dashboard-transactions", "transactions-form");
 // Function to get innerText in number
 function getInnerTextNumber(id) {
   const getInnerTextNumber = parseInt(document.getElementById(id).innerText);
@@ -45,8 +56,17 @@ function addMoneyButton(id) {
     }
     let availableBalance = getInnerTextNumber("total-amount");
     const addMoney = getValueNumber("add-money-amount");
+    if (addMoney <= 0) {
+      alert("Invalid Credentials");
+      return;
+    }
     const netBalance = availableBalance + addMoney;
     document.getElementById("total-amount").innerText = netBalance;
+    const data = {
+      name: "Add Money",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionData.push(data);
   });
 }
 addMoneyButton("add-money-submit");
@@ -64,21 +84,49 @@ function cashOutButton(id) {
     }
     let availableBalance = getInnerTextNumber("total-amount");
     const cashOutMoney = getValueNumber("cash-out-amount");
+    if (cashOutMoney <= 0) {
+      alert("Invalid Credentials");
+      return;
+    }
     const netBalance = availableBalance - cashOutMoney;
     if (netBalance < 0) {
       alert("Invalid Credentials");
       return;
     }
     document.getElementById("total-amount").innerText = netBalance;
+    const data = {
+      name: "Cash Out",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionData.push(data);
+    console.log(data);
   });
 }
 cashOutButton("cash-out-submit");
 
-// Transfer Money
-dashboard("dashboard-transfer", "transfer-money-form");
-// Bonus Money
-dashboard("dashboard-bonus", "bonus-money");
-// Pay Bill
-dashboard("dashboard-pay-bill", "pay-bill-form");
-//  Transactions
-dashboard("dashboard-transactions", "transactions-form");
+// Transaction Details
+document
+  .getElementById("dashboard-transactions")
+  .addEventListener("click", function () {
+    const transactionContainer = document.getElementById(
+      "transaction-container"
+    );
+    for (const data of transactionData) {
+      const div = document.createElement("div");
+      div.innerHTML = `<div class=" bg-white rounded-xl p-3 flex justify-between items-center mt-3">
+              <div class="flex items-center">
+                  <div class="p-3 rounded-full bg-[#f4f5f7]">
+                    <img src="./assets/wallet1.png" class="mx-auto" alt="" />
+                  </div>
+                  <div class="ml-3">
+                    <h1>${data.name}</h1>
+                    <p>${data.date}</p>
+                  </div>
+              </div>
+      
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+      `;
+      transactionContainer.appendChild(div);
+    }
+  });
